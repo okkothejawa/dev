@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { WagmiProvider, createConfig, fallback, http } from "wagmi";
 import { injected } from "wagmi/connectors";
 import { mainnet, goerli, sepolia, localhost } from "wagmi/chains";
+import { defineChain } from "viem";
 import { ConnectKitProvider, getDefaultConfig, getDefaultConnectors } from "connectkit";
 import { Flex, Heading, ThemeUIProvider, Paragraph, Link } from "theme-ui";
 
@@ -19,6 +20,32 @@ import { AppLoader } from "./components/AppLoader";
 import { useAsyncValue } from "./hooks/AsyncValue";
 
 const isDemoMode = import.meta.env.VITE_APP_DEMO_MODE === "true";
+
+export const citreaDevnet = /*#__PURE__*/ defineChain({
+  id: 62298,
+  name: 'Citrea Devnet',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'Citrea BTC',
+    symbol: 'CBTC',
+  },
+  rpcUrls: {
+    default: { http: ['https://rpc.devnet.citrea.xyz'] },
+  },
+  blockExplorers: {
+    default: {
+      name: 'Citrea Devnet Explorer',
+      url: 'https://explorer.devnet.citrea.xyz',
+      apiUrl: 'https://explorer.devnet.citrea.xyz/api',
+    },
+  },
+  contracts: {
+    multicall3: {
+      address: '0xca11bde05977b3631167028862be2a173976ca11',
+      blockCreated: 1759892,
+    },
+  },
+})
 
 if (isDemoMode) {
   const ethereum = new DisposableWalletProvider(
@@ -87,6 +114,7 @@ const appDescription = "Decentralized borrowing protocol";
 const App = () => {
   const config = useAsyncValue(getConfig);
   const loader = <AppLoader />;
+  
 
   return (
     <ThemeUIProvider theme={theme}>
@@ -102,8 +130,8 @@ const App = () => {
                 isDemoMode || import.meta.env.MODE === "test"
                   ? [localhost]
                   : config.value.testnetOnly
-                  ? [goerli, sepolia]
-                  : [mainnet, goerli, sepolia],
+                  ? [goerli, sepolia, citreaDevnet]
+                  : [mainnet, goerli, sepolia, citreaDevnet],
 
               connectors:
                 isDemoMode || import.meta.env.MODE === "test"
@@ -147,7 +175,8 @@ const App = () => {
                   http()
                 ]),
 
-                [localhost.id]: http()
+                [localhost.id]: http(),
+                [citreaDevnet.id]: http("https://rpc.devnet.citrea.xyz"),
               }
             })
           )}

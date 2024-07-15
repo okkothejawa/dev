@@ -69,7 +69,6 @@ export const LiquityProvider: React.FC<LiquityProviderProps> = ({
     if (config && provider && signer && account.address) {
       const batchedProvider = new BatchedProvider(provider, chainId);
       // batchedProvider._debugLog = true;
-
       try {
         return _connectByChainId(batchedProvider, signer, chainId, {
           userAddress: account.address,
