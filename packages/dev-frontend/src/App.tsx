@@ -130,8 +130,8 @@ const App = () => {
                 isDemoMode || import.meta.env.MODE === "test"
                   ? [localhost]
                   : config.value.testnetOnly
-                  ? [goerli, sepolia, citreaDevnet]
-                  : [mainnet, goerli, sepolia, citreaDevnet],
+                  ? [citreaDevnet]
+                  : [citreaDevnet],
 
               connectors:
                 isDemoMode || import.meta.env.MODE === "test"
