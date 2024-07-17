@@ -19,7 +19,7 @@ n_sim = year
 NUM_LIQUIDATIONS = 10
 
 LUSD_GAS_COMPENSATION = 200.0
-MIN_NET_DEBT = 1800.0
+MIN_NET_DEBT = 50.0
 MAX_FEE = Wei(1e18)
 
 """# Ether price (exogenous)
