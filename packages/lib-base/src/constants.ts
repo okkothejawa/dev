@@ -30,7 +30,7 @@ export const LUSD_LIQUIDATION_RESERVE = Decimal.from(200);
  *
  * @public
  */
-export const LUSD_MINIMUM_NET_DEBT = Decimal.from(1800);
+export const LUSD_MINIMUM_NET_DEBT = Decimal.from(50);
 
 /**
  * A Trove must always have at least this much debt.

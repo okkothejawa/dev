@@ -7,13 +7,13 @@ export type Lexicon = {
 export const BORROW_FEE: Lexicon = {
   term: "Borrowing Fee",
   description:
-    "The Borrowing Fee is a one-off fee charged as a percentage of the borrowed amount (in LUSD) and is part of a Trove's debt. The fee varies between 0.5% and 5% depending on LUSD redemption volumes."
+    "The Borrowing Fee is a one-off fee charged as a percentage of the borrowed amount (in CitrUSD) and is part of a Trove's debt. The fee varies between 0.5% and 5% depending on CitrUSD redemption volumes."
 };
 
 export const TVL: Lexicon = {
   term: "TVL",
   description:
-    "The Total Value Locked (TVL) is the total value of Ether locked as collateral in the system, given in ETH and USD."
+    "The Total Value Locked (TVL) is the total value of Bitcoin locked as collateral in the system, given in BTC and USD."
 };
 
 export const STAKED_LQTY: Lexicon = {
@@ -24,7 +24,7 @@ export const STAKED_LQTY: Lexicon = {
 export const TCR: Lexicon = {
   term: "Total Collateral Ratio",
   description:
-    "The ratio of the Dollar value of the entire system collateral at the current ETH:USD price, to the entire system debt."
+    "The ratio of the Dollar value of the entire system collateral at the current BTC:USD price, to the entire system debt."
 };
 
 export const RECOVERY_MODE: Lexicon = {
@@ -34,9 +34,9 @@ export const RECOVERY_MODE: Lexicon = {
 };
 
 export const STABILITY_POOL_LUSD: Lexicon = {
-  term: "LUSD in Stability Pool",
+  term: "CitrUSD in Stability Pool",
   description:
-    "The total LUSD currently held in the Stability Pool, expressed as an amount and a fraction of the LUSD supply."
+    "The total CitrUSD currently held in the Stability Pool, expressed as an amount and a fraction of the CitrUSD supply."
 };
 
 export const KICKBACK_RATE: Lexicon = {
@@ -46,11 +46,11 @@ export const KICKBACK_RATE: Lexicon = {
 };
 
 export const ETH: Lexicon = {
-  term: "ETH"
+  term: "BTC"
 };
 
 export const LUSD: Lexicon = {
-  term: "LUSD"
+  term: "CitrUSD"
 };
 
 export const LQTY: Lexicon = {
@@ -63,6 +63,6 @@ export const TROVES: Lexicon = {
 };
 
 export const LUSD_SUPPLY: Lexicon = {
-  term: "LUSD supply",
-  description: "The total LUSD minted by the Liquity Protocol."
+  term: "CitrUSD supply",
+  description: "The total CitrUSD minted by the Liquity Protocol."
 };

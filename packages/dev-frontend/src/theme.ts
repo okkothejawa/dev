@@ -7,13 +7,15 @@ const baseColors = {
   green: "#28c081",
   yellow: "#fd9d28",
   red: "#dc2c10",
-  lightRed: "#ff755f"
+  lightRed: "#ff755f",
+  orange: "#ee8c36",
+  darkOrange: "#d0782c"
 };
 
 const colors = {
-  primary: baseColors.blue,
-  secondary: baseColors.purple,
-  accent: baseColors.cyan,
+  primary: baseColors.orange,
+  secondary: baseColors.darkOrange,
+  accent: baseColors.darkOrange,
 
   success: baseColors.green,
   warning: baseColors.yellow,
@@ -97,7 +99,7 @@ const infoCard: ThemeUIStyleObject = {
   padding: 3,
 
   borderColor: "rgba(122,199,240,0.4)",
-  background: "linear-gradient(200deg, #d4d9fc, #cae9f9)",
+  background: "linear-gradient(200deg, #ee8c36, #ffba77)",
 
   h2: {
     mb: 2,
